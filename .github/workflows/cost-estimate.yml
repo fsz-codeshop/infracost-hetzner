@@ -1,0 +1,42 @@
+name: Cloud Cost Estimate
+
+on:
+  pull_request:
+    paths:
+      - 'terraform/**'
+      - '.github/workflows/cost-estimate.yml'
+
+jobs:
+  estimate-cost:
+    name: Estimate Hetzner Costs
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout Code
+        uses: actions/checkout@v4
+
+      - name: Setup Terraform
+        uses: hashicorp/setup-terraform@v3
+        with:
+          terraform_wrapper: false
+
+      - name: Terraform Init
+        working-directory: ./terraform
+        run: terraform init
+
+      - name: Terraform Plan
+        working-directory: ./terraform
+        run: terraform plan -out=plan.out
+
+      - name: Terraform Show JSON
+        working-directory: ./terraform
+        run: terraform show -json plan.out > ../plan.json
+
+      - name: Run Infracost Hetzner
+        uses: docker://fsz-codeshop/infracost-hetzner:latest
+        env:
+          HCLOUD_TOKEN: ${{ secrets.HCLOUD_TOKEN }}
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          PR_NUMBER: ${{ github.event.pull_request.number }}
+          GITHUB_REPOSITORY: ${{ github.repository }}
+        with:
+          args: --plan plan.json

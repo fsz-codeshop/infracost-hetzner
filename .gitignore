@@ -1,0 +1,30 @@
+# Binaries
+infracost-hetzner
+*.exe
+*.exe~
+*.dll
+*.so
+*.dylib
+
+# Terraform
+.terraform/
+*.tfstate
+*.tfstate.backup
+*.tfvars
+*.plan
+*.out
+plan.json
+
+# Go
+vendor/
+go.work
+
+# IDE / Editor
+.idea/
+.vscode/
+*.swp
+*.swo
+*~
+
+# Auto-created
+.agent/

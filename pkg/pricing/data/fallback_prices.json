@@ -1,0 +1,98 @@
+[
+  {
+    "type": "server",
+    "name": "cx11",
+    "monthly_net": 3.79,
+    "hourly_net": 0.0062
+  },
+  {
+    "type": "server",
+    "name": "cpx11",
+    "monthly_net": 4.35,
+    "hourly_net": 0.0071
+  },
+  {
+    "type": "server",
+    "name": "cx22",
+    "monthly_net": 7.55,
+    "hourly_net": 0.0123
+  },
+  {
+    "type": "server",
+    "name": "cpx21",
+    "monthly_net": 8.15,
+    "hourly_net": 0.0133
+  },
+  {
+    "type": "server",
+    "name": "cx32",
+    "monthly_net": 13.90,
+    "hourly_net": 0.0227
+  },
+  {
+    "type": "server",
+    "name": "cpx31",
+    "monthly_net": 16.20,
+    "hourly_net": 0.0264
+  },
+  {
+    "type": "server",
+    "name": "cx42",
+    "monthly_net": 26.90,
+    "hourly_net": 0.0439
+  },
+  {
+    "type": "server",
+    "name": "cpx41",
+    "monthly_net": 31.90,
+    "hourly_net": 0.0520
+  },
+  {
+    "type": "server",
+    "name": "cx52",
+    "monthly_net": 52.90,
+    "hourly_net": 0.0863
+  },
+  {
+    "type": "server",
+    "name": "cpx51",
+    "monthly_net": 63.90,
+    "hourly_net": 0.1042
+  },
+  {
+    "type": "server",
+    "name": "ccx13",
+    "monthly_net": 99.00,
+    "hourly_net": 0.1610
+  },
+  {
+    "type": "server",
+    "name": "ccx23",
+    "monthly_net": 199.00,
+    "hourly_net": 0.3250
+  },
+  {
+    "type": "server",
+    "name": "ccx33",
+    "monthly_net": 299.00,
+    "hourly_net": 0.4890
+  },
+  {
+    "type": "server",
+    "name": "ccx43",
+    "monthly_net": 399.00,
+    "hourly_net": 0.6520
+  },
+  {
+    "type": "server",
+    "name": "ccx53",
+    "monthly_net": 599.00,
+    "hourly_net": 0.9780
+  },
+  {
+    "type": "server",
+    "name": "ccx63",
+    "monthly_net": 919.00,
+    "hourly_net": 1.5030
+  }
+]
