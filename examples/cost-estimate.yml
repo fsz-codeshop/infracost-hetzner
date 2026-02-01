@@ -32,7 +32,7 @@ jobs:
         run: terraform show -json plan.out > ../plan.json
 
       - name: Run Infracost Hetzner
-        uses: docker://fsz-codeshop/infracost-hetzner:latest
+        uses: docker://ghcr.io/fsz-codeshop/infracost-hetzner:latest
         env:
           HCLOUD_TOKEN: ${{ secrets.HCLOUD_TOKEN }}
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
