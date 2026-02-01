@@ -2,6 +2,8 @@ module github.com/fsz-codeshop/infracost-hetzner
 
 go 1.23.0
 
+toolchain go1.24.12
+
 require (
 	github.com/google/go-github/v60 v60.0.0
 	github.com/hetznercloud/hcloud-go/v2 v2.6.0
