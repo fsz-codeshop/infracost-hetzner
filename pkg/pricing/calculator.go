@@ -1,7 +1,6 @@
 package pricing
 
 import (
-	"fmt"
 	"github.com/fsz-codeshop/infracost-hetzner/pkg/terraform"
 )
 
@@ -28,16 +27,21 @@ func CalculateTotal(plan *terraform.Plan, engine *Engine) (*TotalCost, error) {
 	}
 
 	for _, change := range plan.ResourceChanges {
-		// We only care about creates or updates for now
+		// We only care about creates or updates (not no-ops)
 		isRelevant := false
 		for _, action := range change.Change.Actions {
-			if action == "create" || action == "update" || action == "no-op" {
+			if action == "create" || action == "update" {
 				isRelevant = true
 				break
 			}
 		}
 
 		if !isRelevant {
+			continue
+		}
+
+		// Optimization: Only try to calculate prices for Hetzner resources
+		if len(change.Type) < 7 || change.Type[:7] != "hcloud_" {
 			continue
 		}
 
