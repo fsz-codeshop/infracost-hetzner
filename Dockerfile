@@ -23,7 +23,7 @@ RUN apk --no-cache add ca-certificates
 WORKDIR /root/
 
 # Copy the binary from builder
-COPY --from=builder /app/infracost-hetzner .
+COPY --from=builder /app/infracost-hetzner /usr/local/bin/infracost-hetzner
 
 # Default command
-ENTRYPOINT ["./infracost-hetzner"]
+ENTRYPOINT ["infracost-hetzner"]
