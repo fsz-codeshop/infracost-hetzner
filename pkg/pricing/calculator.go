@@ -47,8 +47,8 @@ func CalculateTotal(plan *terraform.Plan, engine *Engine) (*TotalCost, error) {
 
 		price, err := engine.Calculate(change.Type, change.Change.After)
 		if err != nil {
-			// Log error but continue with other resources
-			fmt.Printf("Skipping resource %s: %v\n", change.Address, err)
+			// Resource is either unsupported/free (e.g. firewall) or we couldn't price it.
+			// Don't log to avoid CI spam.
 			continue
 		}
 
